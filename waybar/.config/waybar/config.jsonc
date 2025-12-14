@@ -1,0 +1,239 @@
+// -*- mode: jsonc -*-
+{
+  // "layer": "top", // Waybar at top layer
+  // "position": "bottom", // Waybar position (top|bottom|left|right)
+  "height": 34, // Waybar height (to be removed for auto height)
+  "width": 1080, // Waybar width
+  "margin-top": 4,
+  "spacing": 4, // Gaps between modules (4px)
+  "reload_style_on_change": true,
+  "fixed-center": true,
+
+  "modules-left": [
+    "sway/workspaces",
+    "hyprland/workspaces",
+    "group/group-left",
+    "hyprland/mode",
+    "hyprland/scratchpad",
+  ],
+  "modules-center": [
+    "group/group-display",
+    "clock",
+    "cava",
+    "group/group-backlight",
+  ],
+  "modules-right": [
+    "tray",
+    "group/group-pulseaudio",
+    "power-profiles-daemon",
+    "custom/power",
+  ],
+
+  "sway/workspaces": {
+  "format": "{icon}",
+  "on-click": "activate",
+  "format-icons": {
+    "1": "",
+    "2": "",
+    "3": "",
+    "4": "",
+    "5": "",
+    "urgent": "",
+    "active": "",
+    "default": ""
+  },
+  "sort-by-number": true
+},
+
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>",
+  },
+  "sway/scratchpad": {
+    "format": "{icon} {count}",
+    "show-empty": false,
+    "format-icons": ["", ""],
+    "tooltip": true,
+    "tooltip-format": "{app}: {title}",
+  },
+  "mpd": {
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "unknown-tag": "N/A",
+    "interval": 5,
+    "consume-icons": {
+      "on": " ",
+    },
+    "random-icons": {
+      "off": "<span color=\"#f53c3c\"></span> ",
+      "on": " ",
+    },
+    "repeat-icons": {
+      "on": " ",
+    },
+    "single-icons": {
+      "on": "1 ",
+    },
+    "state-icons": {
+      "paused": "",
+      "playing": "",
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)",
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": "",
+    },
+  },
+  "tray": {
+    "icon-size": 14,
+    "spacing": 10,
+    // "icons": {
+    //   "blueman": "bluetooth",
+    //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+    // }
+  },
+  "clock": {
+    // "timezone": "America/New_York",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}",
+  },
+  "backlight": {
+    // "device": "acpi_video1",
+    "format": "{icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": "",
+    },
+  },
+
+  "group/group-left": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "grouphyprland",
+      "transition-left-to-right": true,
+    },
+    "modules": ["custom/spotify-icon", "custom/spotify"],
+  },
+
+  "group/group-pulseaudio": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "groupaudio",
+      "click-to-reveal": false,
+      "transition-left-to-right": true,
+    },
+    "modules": ["pulseaudio", "pulseaudio/slider"],
+  },
+
+  "pulseaudio": {
+    "scroll-step": 2, // %, can be a float
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""],
+    },
+  },
+
+  "backlight/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal",
+    "device": "intel_backlight",
+  },
+  "group/group-backlight": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "groupbacklight",
+      "click-to-reveal": false,
+      "transition-left-to-right": true,
+    },
+    "modules": ["backlight", "backlight/slider"],
+  },
+  "group/group-display": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "groupdisplay",
+      "click-to-reveal": false,
+    },
+      "transition-left-to-right": false,
+    "modules": ["idle_inhibitor", "custom/hyprsunset"],
+  },
+
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal",
+  },
+  // "custom/spotify": {
+  //     "exec": "/usr/bin/python3 /home/god/.config/waybar/modules/mediaplayer.py --player spotify",
+  //     "format": "{}  ",
+  //     "return-type": "json",
+  //     "on-click-middle": "playerctl -p spotify play-pause",
+  //     "on-click-right": "playerctl next",
+  //     "on-click": "playerctl previous"
+  // },
+
+  // "custom/spotify": {
+  //     "format": " {} {icon}",
+  //     "return-type": "json",
+  //     "format-icons": {
+  //         "Playing": "",
+  //         "Paused": "",
+  //         "Stopped": "",
+  //         "default": ""
+  //     },
+  //     "exec": "playerctl --player=spotify --follow metadata --format '{\"text\": \"{{artist}} {{title}}\", \"alt\": \"{{status}}\"}' 2>/dev/null || echo '{\"text\": \"\", \"alt\": \"Stopped\"}'",
+  //     "exec-if": "playerctl status --player=spotify 2>/dev/null",
+  //     "on-click": "playerctl --player=spotify play-pause",
+  //     "on-click-right": "playerctl --player=spotify next",
+  //     "on-click-middle": "playerctl --player=spotify previous"
+  // },
+  "custom/spotify-icon": {
+    "format": "  ",
+    "tooltip": false,
+  },
+  "custom/spotify": {
+    "exec": "/usr/bin/python3 ~/.config/waybar/modules/mediaplayer.py --player spotify",
+    "format": "    {}",
+    "return-type": "json",
+    "on-click": "playerctl --player=spotify play-pause",
+    "on-click-right": "playerctl --player=spotify next",
+    "on-click-middle": "playerctl --player=spotify previous",
+  },
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "wlogout -b 2 -T 290 -B 290 -L 580 -R 580",
+  },
+  "custom/hyprsunset": {
+    "format": "󱣗",
+    "tooltip": false,
+    "on-click": "~/.config/Scripts/hyprsunset.sh",
+  },
+}
