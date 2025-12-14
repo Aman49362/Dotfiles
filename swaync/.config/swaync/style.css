@@ -1,0 +1,61 @@
+@import "swaync-colors.css";
+
+* {
+    all: unset;
+    font-family: CaskaydiaMono NFP;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.control-center {
+    background-color: alpha(@background,.15);
+    color: alpha(@on_primary_container,.85);
+    border: 2px solid alpha(@outline,0.05);
+    border-radius: 15px;
+    padding: 10 10px;
+    margin: 10 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.notification {
+    background-color: alpha(@primary_container,0.25);
+    color: alpha(@on_primary_container,.85);
+    border: 2px solid alpha(@outline,0.2);
+    margin: 4 4px;
+    padding: 0 7px;
+    font-weight: 900;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.notification-text {
+    padding: 20px;
+}
+
+.notification:hover {
+    background-color: alpha(@primary_container,0.5);
+}
+
+.notification-action {
+    background-color: alpha(@primary_container, 0.9);
+    color: @on_primary_container;
+    border: 2px solid alpha(@outline, 0.1);
+    border-radius: 6px;
+    transition: all 0.5s ease-in-out;
+}
+
+.close-button {
+    background-color: alpha(@error_container, 0.3);
+    color: alpha(@on_error_container,.85);
+    border: 2px solid alpha(@outline, 0.1);
+    border-radius: 7px;
+}
+
+.control-center-clear-all {
+    background-color: alpha(@primary_container, 0.95);
+    color: alpha(lighter(@on_primary_container),0.99);
+    border: 2px solid alpha(@outline, 0.1);
+    border-radius: 13px;
+    margin: 10 10px;
+    padding: 10 10px;
+}

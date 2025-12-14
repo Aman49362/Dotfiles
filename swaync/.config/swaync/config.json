@@ -1,0 +1,9 @@
+{
+  "positionX": "right",
+  "positionY": "top",
+  "control-center-margin-top": 40,
+  "control-center-margin-bottom": 40,
+  "control-center-margin-right": 0,
+  "cssPriority": "user",
+  "layer-shell": true
+}

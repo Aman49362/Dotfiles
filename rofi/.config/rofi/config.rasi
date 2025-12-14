@@ -1,0 +1,134 @@
+@import "colors.rasi"
+
+configuration {
+    combi-mode: "drun,run,window";
+    show-icons: true;
+    terminal: "kitty";
+    drun-display-format: "{icon} {name}";
+    //sidebar-mode: true;
+}
+
+* {
+    //font-family: "CaskaydiaMono NFP SemiBold";
+    //font-weight: 500;
+}
+
+window {
+    background-color: transparent;
+    border: none;
+}
+
+inputbar {
+    background-color: @background;
+    color: @on-primary-container;
+    padding: 6 6 6 6;
+    margin: 6 100 16 100;
+    border-radius: 10px;
+    border: 2px;
+    border-color: @outline;
+}
+
+entry {
+    placeholder: "Search...";
+    placeholder-color: @on-primary-container;
+    text-color: @on-primary-container;
+    font-size: 14px;
+    padding: 2 0 0 0;
+}
+
+mainbox {
+    background-color: transparent;
+    color: @on-background;
+    border-radius: 15px;
+}
+
+element {
+    background-color: transparent;
+    color: @on-primary-container;
+    border-radius: 7px;
+    padding: 9 0 9 25;
+    //margin: 0 60 0 60;
+}
+
+element normal.normal {
+    background-color: @background;
+    border: 2px;
+    border-color: @outline;
+}
+
+element alternate.normal {
+    background-color: @background;
+    color: @on-primary-container;
+    border: 2px;
+    border-color: @outline;
+}
+
+element selected.normal {
+    background-color: @primary-container;
+    color: @on-primary-container;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 2px;
+    border-color: @outline;
+}
+
+element-text {
+    color: @on-surface;
+}
+
+element-text selected{
+    color: @on-primary-container;
+}
+
+element-icon {
+    size: 28px;
+}
+
+listview {
+    background-color: transparent;
+    lines: 3;
+    padding: 0 0 0 0;
+    margin: 0 150 0 150;
+    fixed-height: false;
+    border-radius: 10px;
+    border: none;
+    scrollbar: false;
+}
+
+sidebar {
+    background-color: transparent;
+}
+
+mode-switcher {
+    background-color: @background;
+    padding: 6 6 6 6;
+    margin: 6 70 6 70;
+    border-radius: 10px;
+}
+
+button {
+    color: @on-primary-container;
+    border-radius: 6px;
+}
+
+button selected {
+    background-color: @primary-container;
+    color: @on-primary-container;
+}
+
+message {
+    background-color: @primary-container;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 8px 0px 0px 0px;
+}
+
+prompt {
+    background-color: @primary-container;
+    padding: 4px 8px;
+    border-radius: 7px;
+    margin: 0px 8px 2px 0px;
+    text-color: @on-primary-container;
+    border: 2px;
+    border-color: @outline;
+}

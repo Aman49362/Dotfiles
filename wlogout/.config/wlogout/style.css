@@ -1,0 +1,84 @@
+@import "colors.css";
+
+* {
+	all: unset;
+	font-family: CaskaydiaMono NFP SemiBold;
+	font-size: 13px;
+	/* background-image: image(url("/home/god/.config/wlogout/last-wallpaper")); */
+}
+
+window {
+	background-color: transparent;
+}
+
+
+button {
+    border-radius: 0px;
+	background-size: 20%;
+	background-position: center;
+	background-repeat: no-repeat;
+	border: none;
+    transition: all 0.5s ease-in-out;
+}
+
+button:focus, button:active, button:hover {
+	/* background-color: alpha(@secondary_container,0.55);
+	color: alpha(@on_secondary_container,1); */
+	box-shadow: 0 8px 25px alpha(@shadow,.6); /* Enhanced shadow on hover */
+	background-size: 33%;
+	/* transition: all .2s ease-in-out; */
+}
+
+
+#lock {
+	background-color: alpha(@primary_container,0.75);
+	color: alpha(@on_primary_container,.87);
+	border-top-left-radius: 20px;
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+	background-color: alpha(@secondary_container,0.75);
+	color: alpha(@on_secondary_container,.87);
+	border-bottom-left-radius: 20px;
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+
+#shutdown {
+	background-color: alpha(@error_container,0.75);
+	color: alpha(@on_error_container,.87);
+	border-top-right-radius: 20px;
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+	background-color: alpha(@tertiary_container,0.75);
+	color: alpha(@on_tertiary_container,.87);
+	border-bottom-right-radius: 20px;
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+}
+
+
+#lock:hover, #lock:focus, #lock:active {
+	margin: -80px 0px 0px -80px;
+	border-bottom-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+#logout:hover, #logout:focus, #logout:active {
+	margin: 0px 0px -80px -80px;
+	border-bottom-right-radius: 20px;
+	border-top-left-radius: 20px;
+}
+
+#shutdown:hover, #shutdown:focus, #shutdown:active {
+	margin: -80px -80px 0px 0px;
+	border-bottom-right-radius: 20px;
+	border-top-left-radius: 20px;
+}
+
+#reboot:hover, #reboot:focus, #reboot:active {
+	margin: 0px -80px -80px 0px;
+	border-bottom-left-radius: 20px;
+	border-top-right-radius: 20px;
+}

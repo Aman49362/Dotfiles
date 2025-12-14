@@ -1,0 +1,19 @@
+@import url("/home/god/.config/waybar/colors.css");
+
+/* Dolphin transparency styles */
+QMainWindow {
+background-color: rgba(30,30,30, 0.55);
+}
+
+QTreeView, QListView {
+background-color: rgba(30,30,30, 0.55);
+alternate-background-color: rgba(30,30,30, 0.55);
+}
+
+QMenu {
+background-color: rgba(30,30,30, 0.25);
+border: 1px solid rgba(86, 86, 86, 0.5);
+border-radius: 12px;
+margin: 0 0 0 0px;
+padding: 5 5 5 5px;
+}
