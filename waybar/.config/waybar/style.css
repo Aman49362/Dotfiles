@@ -283,7 +283,7 @@ tooltip lable {
     color: alpha(@on_primary_container, 0.85);
     border: 2px solid alpha(@outline, 0);
     font-weight: 700;
-    font-size: 13.5px;
+    font-size: 11px;
     margin: 4 1px;
     padding: 0 4 0 0px;
     border-radius: 10px;

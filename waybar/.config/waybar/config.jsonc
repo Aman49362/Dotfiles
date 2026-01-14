@@ -221,6 +221,7 @@
   "custom/spotify": {
     "exec": "/usr/bin/python3 ~/.config/waybar/modules/mediaplayer.py --player spotify",
     "format": "    {}",
+    "tooltip": false,
     "return-type": "json",
     "on-click": "playerctl --player=spotify play-pause",
     "on-click-right": "playerctl --player=spotify next",
